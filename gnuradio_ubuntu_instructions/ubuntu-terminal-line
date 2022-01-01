@@ -1,0 +1,54 @@
+#ubuntu #terminal #command
+
+
+## command line
+	clear line
+		ctrl+u
+	remove folder and its info
+		rm -r <file name>
+	software to open files as text
+		gedit <filename>
+
+## check if a library exist
+	ldconfig -p | grep <library name>
+		if exist, we receive info otherwise none
+	apt list --installed | grep <library name>
+	
+## check if a package exist
+	which <package name>
+		if exist, we receive info otherwise none
+
+
+## APT (similar to brew or port for mac)
+	- update apt git before doing anything with apt
+		sudo apt-get update -y
+	- search for a package
+		apt search <package name>
+	- download a package or software
+		sudo apt-get -y install <package name>
+	- list all installed packages
+		sudo apt list --installed
+	- remove package
+		sudo apt remove package_name
+	- To completely remove packages and their configuration settings file, you use apt get with purge options.
+		sudo apt purge package_name
+		
+	
+## git
+	- clonning an online repository
+		git clone <git html address>
+	- get specific file
+		wget	
+			wget https://github.com/airspy/airspyone_host/archive/master.zip
+			
+			
+## cmake, make specially for installing OoT packages from source for gnuradio 
+	go to the folder that has cmake instruction
+	$ mkdir build
+	$ cd build
+	$ cmake .. [maybe some extension here]
+	$ make
+	$ make test [After running make, you can run the tests by running this coomand  in the build/ directory.]
+	$ sudo make install
+	$ sudo ldconfig
+

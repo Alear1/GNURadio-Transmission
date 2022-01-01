@@ -1,0 +1,19 @@
+#Linux #SDR #SOFTWARE #gQRX
+
+
+## installing 
+	Not using ubuntu app store. Does not work
+	Using the source: https://github.com/gqrx-sdr/gqrx
+		checking if all required Gnu Radio components is installed
+			type in terminal
+			gnuradio-config-info --enabled-components | sed 's/;/\n/g'
+			source: https://wiki.gnuradio.org/index.php/FAQ#I_installed_GNU_Radio.2C_but_some_components_seem_to_be_missing.
+		gnuradio-pmt component was not installed.
+			installing by following https://github.com/gnuradio/pmt
+			not successful
+
+
+## applying doppler shift using gPredict
+	http://teslaintheether.blogspot.com/2018/02/setting-up-gqrx-and-gpredict-for.html
+	source folder: [gQRX doppler gPredict] Tesla in the Æther_ Setting Up gQRX and gPredict for Automatic Doppler Correction.pdf
+	 

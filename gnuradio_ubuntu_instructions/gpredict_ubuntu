@@ -1,0 +1,8 @@
+#ubuntu #gpredict
+
+1.go to gpredict website and follow instruction
+	http://gpredict.oz9aec.net/download.php
+2. go to github
+3. download the tar file
+4. use the tar command (change the numbers based on the version): tar -xvjf gpredict-2.2.1.tar.bz
+

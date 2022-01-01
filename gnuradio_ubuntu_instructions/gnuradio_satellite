@@ -1,0 +1,60 @@
+gnuradio satellites gomspace ax100 OoT
+
+## gr-satellites: OoT for satellite decoding including gomspace and its protocols
+	* installed on 20211213 in MCY ubuntu gnuradio 3.8
+	intro
+	- https://www.gnuradio.org/grcon/grcon19/presentations/gr-satellites_a_collection_of_decoders_for_Amateur_satellites/
+	- source folder: Daniel Estévez - gr-satellites.pdf
+	git
+	- https://github.com/daniestevez/gr-satellites
+	- source folder: [github clone 20211213] gr-satellites-master.zip
+	Documentation
+	- https://gr-satellites.readthedocs.io/en/latest/
+		installing from source
+		installing from conda
+		installing from PAA
+	- https://wiki.gnuradio.org/index.php/SOCIS/Projects2019
+## Satellie Audio Recording
+	- https://github.com/daniestevez/satellite-recordings/
+	- source folder:[recording githubclone]satellite-recordings-master.zip
+## satnogs
+	* installed on 20211213 in MCY ubuntu gnuradio 3.8
+	intro
+	- https://www.gnuradio.org/grcon/grcon18/presentations/SatNOGs/
+		- includes youtube presentation
+	- source folder: 1-Manolis-Surligas_satnogs.pdf
+		- [[check]] ** includes NOAA decoding 
+	git
+	- https://gitlab.com/librespacefoundation/satnogs/gr-satnogs/-/blob/master/README.md
+	sourcefolder: [gitlab satnogs oot gnuradio] gr-satnogs-master.zip
+	
+# gr-leo: OoT for simulating satcom
+	* installed on 20211213 in MCY ubuntu gnuradio 3.8
+	git
+	- https://gitlab.com/librespacefoundation/gr-leo		
+	source folder: [gr-leo oot gr 3.8 gitlib] gr-leo-master.zip
+
+## gr-ax100: Gomespace OoT but deprected and now available in  gr-satellites
+	- https://github.com/daniestevez/gr-ax100
+	- source folder: [old-gr gomspace github clone] gr-ax100-master
+	
+## beesat-sdr: includes decoder and TNC (Terminal Node Controller) OoT for Beesat and gr-satellites may use it
+	- https://github.com/daniestevez/beesat-sdr/tree/maint-3.8
+	- source folder: [beesat sdr OoT github clone 20211213] beesat-sdr-maint-3.8.zip
+	
+## gr-gpredict-doppler: doppler correction oot but it is only compiled for gr3.7
+	* couldn't install on gr 3.8
+	github
+	- https://github.com/wnagele/gr-gpredict-doppler
+## OPS-SAT with gomspace AX100 and GNURADIO
+	info: 
+	- https://opssat1.esoc.esa.int/attachments/download/647/opssat_grcon_esoc_paper.pdf
+	- source file: [using GOMSPACE NANOCOM AX100 GNU RADIO]  opssat_grcon_esoc_paper.pdf	
+	
+## possible useful OoT or info list
+### gr-soapy OoT: https://gitlab.com/librespacefoundation/gr-soapy
+### gr-ccsds OoT: CCSDS Telemetry and Telecommand Transceivers https://gitlab.com/librespacefoundation/gr-ccsds
+### SDR info and activity: https://sdrmaker.space/activity/
+
+		
+

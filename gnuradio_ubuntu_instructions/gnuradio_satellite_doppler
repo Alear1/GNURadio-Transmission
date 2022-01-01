@@ -1,0 +1,21 @@
+#GNURadio #GR #satellite #doppler
+
+
+## satnogs
+	* installed on 20211213 in MCY ubuntu gnuradio 3.8
+	intro
+	- https://www.gnuradio.org/grcon/grcon18/presentations/SatNOGs/
+		- includes youtube presentation
+	- source folder: 1-Manolis-Surligas_satnogs.pdf
+		- [[check]] ** includes NOAA decoding 
+	git
+	- https://gitlab.com/librespacefoundation/satnogs/gr-satnogs/-/blob/master/README.md
+	sourcefolder: [gitlab satnogs oot gnuradio] gr-satnogs-master.zip
+	
+
+## some chat
+	https://destevez.net/2015/11/doppler-correction-with-gnuradio/
+
+## gr-gpredict-doppler: doppler correction oot but it is only compiled for gr3.7
+
+
