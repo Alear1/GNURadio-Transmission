@@ -4,21 +4,38 @@
 ## command line
 	clear line
 		ctrl+u
+	clear screen
+		ctrl+l
 	remove folder and its info
 		rm -r <file name>
+			add * to delete mutiple with same name
 	software to open files as text
 		gedit <filename>
+	list items in the current directory
+		ls
+			-a for hidden files
+			-l for long list
 
 ## check if a library exist
 	ldconfig -p | grep <library name>
 		if exist, we receive info otherwise none
+		
+		if something is deleted but this command shows it exist
+			use this command to refresh its database/cashe: sudo ldconfig
 	apt list --installed | grep <library name>
 	
 ## check if a package exist
 	which <package name>
 		if exist, we receive info otherwise none
 
-
+## check files with specific phrase in
+	install mlocate package (if it is not installed)
+		sudo apt install mlocate
+	locate files with specific name
+		locate <file phrase>
+	update locate database after changing (including deleting)	
+		sudo apt-get clean
+		sudo updatedb
 ## APT (similar to brew or port for mac)
 	- update apt git before doing anything with apt
 		sudo apt-get update -y
@@ -51,4 +68,18 @@
 	$ make test [After running make, you can run the tests by running this coomand  in the build/ directory.]
 	$ sudo make install
 	$ sudo ldconfig
-
+	
+	install git
+		sudo apt install git-all
+	if cmake is not installed
+		sudo apt install cmake
+	
+	
+# installing webcam driver for macbook 
+	followd the instruction in 
+		https://askubuntu.com/questions/1308890/just-recently-installed-ubuntu-20-04-1-lts-on-a-macbook-pro-except-the-camera-e?
+			newreg=d1fb863a9d5544709f62068d49932103
+	Hint: check if some packages already installed by using
+		which <package name> 
+		ldconfig -p | grep <library name>
+				

@@ -4,6 +4,10 @@
 ##Installation: follow instruction and installed gr 3.8.3
 	https://wiki.gnuradio.org/index.php/InstallingGR#Ubuntu_PPA_Installation 
 	
+		sudo add-apt-repository ppa:gnuradio/gnuradio-releases-3.8
+		sudo apt-get update
+		sudo apt install gnuradio
+		
 	or
 	
 	[not tried] using pybombs
@@ -26,27 +30,8 @@
 		gnuradio-config-info --enabled-components | sed 's/;/\n/g'
 	source: https://wiki.gnuradio.org/index.php/FAQ#I_installed_GNU_Radio.2C_but_some_components_seem_to_be_missing.	
 
-## adding osmocom for gr 3.8.3
-	I used apt to install it 
-		sudo apt-get update		
-		sudo apt install gr-osmosdr
-	
-	[did not work properly] using git clone and cmake
-		install git
-			sudo apt install git-all
-		if cmake is not installed
-			sudo apt install cmake
-		for latest version go to (using gr 3.9)
-			https://osmocom.org/projects/gr-osmosdr/wiki/GrOsmoSDR
-		or older version
-			git clone https://github.com/osmocom/gr-osmosdr
-
-## add gr.satellites OoT using Cmake
-## add gr.satnogs OoT using Cmake	
-## add gr.leo OoT using Cmake	
-
-## problem with using RTL-SDR: driver problem
-	Messages in GRC:
+## adding RTL-SDR driver: insatll the driver for RTL SDR dongle BEFORE installing/adding osmocom module for GRC
+	If not installed proberly, you see these error messages in GRC:
 		RuntimeError: No supported devices found (check the connection and/or udev rules).
 		RuntimeError: Failed to open rtlsdr device
 		RuntimeError: list contains invalid format!
@@ -54,10 +39,10 @@
 	solution: using git clone and cmake
 		install RTL-SDR following https://osmocom.org/projects/rtl-sdr/wiki
 		go to folder that you wanted to clone
-			git clone git://git.osmocom.org/rtl-sdr.git
-			cd rtl-sdr
-			mkdir build
-			cd build
+			git clone git://git.osmocom.org/rtl-sdr.git;
+			cd rtl-sdr;
+			mkdir build;
+			cd build;
 			cmake ../ -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON -DENABLE_ZEROCOPY=ON
 			make
 			sudo make install
@@ -66,34 +51,68 @@
 			rtl_test -t
 			rtl_test -h for more options
 
-## problem with using AIrspy mini: driver problem
+## adding Airspy driver: insatll the driver for Airspy mini dongle BEFORE installing/adding osmocom module for GRC
 	Messages in GRC:	
 		RuntimeError: No supported devices found (check the connection and/or udev rules).
 	solution:
 		following the steps from https://github.com/airspy/airspyone_host#how-to-build-the-host-software-on-linux
 		go to folder that you wanted to clone
-		wget https://github.com/airspy/airspyone_host/archive/master.zip
-		unzip master.zip
-		cd airspyone_host-master
-		mkdir build
-		cd build
-		cmake ../ -DINSTALL_UDEV_RULES=ON
-		make
-		sudo make install
-		sudo ldconfig
-			
-## developing a simulator to FM transmit NOAA APT Audio using Hack RF
-	following the instruction here: 
-		https://www.youtube.com/watch?v=ToUZ4Jpa7r8&list=PLVH3WkMDiviWdhMrmT8cg49gmtgfpJwza&index=10
-	- not complete
+			wget https://github.com/airspy/airspyone_host/archive/master.zip
+			unzip master.zip
+			cd airspyone_host-master
+			mkdir build
+			cd build
+			cmake ../ -DINSTALL_UDEV_RULES=ON
+			make
+			sudo make install
+			sudo ldconfig
 
-## developing a check file to see if I can change the SDR source frequency from GUI
-	file: SDRrecieverSpactrumCheck
-	- under development
-	
+## adding Hackrf driver: insatll the driver for HackRF One dongle BEFORE installing/adding osmocom module for GRC
+	Messages in GRC:	
+		RuntimeError: No supported devices found (check the connection and/or udev rules).
+	solution:
+		following the steps from https://hackrf.readthedocs.io/en/latest/installing_hackrf_software.html
+		go to folder that you wanted to clone
+			git clone https://github.com/mossmann/hackrf.git
+			cd hackrf/host
+			mkdir build
+			cd build
+			cmake ..
+			make
+			sudo make install
+			sudo ldconfig
+		
+		test 
+			use this command to get info if the driver is installed properly: hackrf_info
 
+## adding osmocom for gr 3.8.3 (need to install both apt version and github version)
+	using apt to install it 
+		sudo apt-get update		
+		sudo apt install gr-osmosdr
+		
+	Received error in GRC 
+		RuntimeError: list contains invalid format!
 	
-	
+	using git clone and cmake
+		
+		for 3.8 version ONLY
+		go to folder that you wanted to clone
+			git clone -b gr3.8 https://github.com/osmocom/gr-osmosdr.git
+			cd gr-osmosdr/
+			mkdir build
+			cd build
+			cmake ..
+			make
+			sudo make install
+			sudo ldconfig	
+		
+		* still CANNOT install Osmocom IQ Imbalance Correction
+		
+
+## add gr.satellites OoT using Cmake
+## add gr.satnogs OoT using Cmake	
+## add gr.leo OoT using Cmake	
+
 	
 ## check gnuradio SDR or other library installed
 	to find all the gnuradio components I'd installed:
@@ -101,6 +120,10 @@
 		apt list --installed | grep sdr
 		apt list --installed | grep osmo
 		apt list --installed | grep soapy
+		apt list --installed | grep soapy
+		
+		
+		ldconfig -p | grep <library name>
 	
 ## uninstalled the components using commands like this:
 
@@ -109,8 +132,34 @@
 	sudo apt-get remove --purge libsoapy*
 	sudo apt-get remove --purge libosmosdr*
 	sudo apt-get remove --purge libmirisdr0*
-	sudo apt-get remove --purge libmirisdr0*
 	sudo apt-get remove --purge librtlsdr*
 	sudo apt-get remove --purge libsoapysdr0*
 	
+## find and delete the files with specific name
 	
+	locate soapy
+		use this command to delete all the files: sudo rm -r <pathname> to deleted the file
+		use back t back commands to update locate database: sudo updatedb; sudo apt-get clean; locate soapy
+	locate rtlsdr 
+		... same as above
+	locate airspy 
+		... same as above
+	locate libmirisdr
+		... same as above
+	locate osmosdr
+		... same as above
+	locate sdr
+		... same as above
+	
+	
+
+
+## projects		
+### developing a simulator to FM transmit NOAA APT Audio using Hack RF
+	following the instruction here: 
+		https://www.youtube.com/watch?v=ToUZ4Jpa7r8&list=PLVH3WkMDiviWdhMrmT8cg49gmtgfpJwza&index=10
+	- not complete
+
+### developing a check file to see if I can change the SDR source frequency from GUI
+	file: SDRrecieverSpactrumCheck
+	- under development
