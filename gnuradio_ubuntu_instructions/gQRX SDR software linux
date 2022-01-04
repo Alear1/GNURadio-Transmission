@@ -1,5 +1,14 @@
 #Linux #SDR #SOFTWARE #gQRX
 
+## Working Method:
+	if hackrf not installed already:
+		sudo apt install gqrx-sdr
+		
+	else:
+		sudo apt install hackrf gqrx-sdr
+		
+	then run gqrx by typing and running in command line:
+		gqrx
 
 ## installing 
 	Not using ubuntu app store. Does not work
