@@ -1,0 +1,20 @@
+#ubuntu #mcylaptop #software #lisst #packages
+
+
+## NOAA APT decoder app
+	for decoding audio file and processing it to image
+	source:
+		https://noaa-apt.mbernardi.com.ar/download.html
+## Gpredict
+	for TLE and satellite tracking (including doppler correction and rotor control)
+	source:
+		gperedict_ubuntu.txt
+		
+## Gnuradio
+	for SDR development
+	source:
+		gnuradio_ubuntu
+##
+
+
+##	

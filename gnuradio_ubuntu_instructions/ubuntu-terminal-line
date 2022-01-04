@@ -61,13 +61,13 @@
 			
 ## cmake, make specially for installing OoT packages from source for gnuradio 
 	go to the folder that has cmake instruction
-	$ mkdir build
-	$ cd build
-	$ cmake .. [maybe some extension here]
-	$ make
-	$ make test [After running make, you can run the tests by running this coomand  in the build/ directory.]
-	$ sudo make install
-	$ sudo ldconfig
+	mkdir build
+	cd build
+	cmake .. [maybe some extension here]
+	make
+	make test [After running make, you can run the tests by running this coomand  in the build/ directory.]
+	sudo make install
+	sudo ldconfig
 	
 	install git
 		sudo apt install git-all

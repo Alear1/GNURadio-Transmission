@@ -110,8 +110,16 @@
 		
 
 ## add gr.satellites OoT using Cmake
+	source in gnuradio_satellite.txt
+	git and cmake procedures in ubuntu_terminal_line.txt
+	
 ## add gr.satnogs OoT using Cmake	
+	source in gnuradio_satellite.txt
+	git and cmake procedures in ubuntu_terminal_line.txt
+
 ## add gr.leo OoT using Cmake	
+	source in gnuradio_satellite.txt
+	git and cmake procedures in ubuntu_terminal_line.txt
 
 	
 ## check gnuradio SDR or other library installed
@@ -154,11 +162,28 @@
 	
 
 
-## projects		
+## projects:
+		
 ### developing a simulator to FM transmit NOAA APT Audio using Hack RF
 	following the instruction here: 
 		https://www.youtube.com/watch?v=ToUZ4Jpa7r8&list=PLVH3WkMDiviWdhMrmT8cg49gmtgfpJwza&index=10
-	- not complete
+	lessons learned:
+		- added the sink block for hack-rf
+			- the sample rate of the signal, entering the sink block, should match that of sink block
+		- added filter to block harmonics
+			- play with cut off and transitional width value
+				- cut off should be less than half of the input signal sample rate
+		- implemented both wideband fm (WBFM) and narrowband fm (NBFM)
+	
+	- latest file: fmTransmitter_noaaApt_hackRF[matched output sample rate].grc
+		- next step: test with hardware
+			* NBFM vs WBFM
+			* filter values
+			* switch to NOAA file and record with SDR# and decode with NOAA APT
+			* play with sink bandwidth value
+			* play with sink gains
+		- future steps
+			- transmit with windows and develop the FM receive
 
 ### developing a check file to see if I can change the SDR source frequency from GUI
 	file: SDRrecieverSpactrumCheck
