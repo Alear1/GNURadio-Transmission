@@ -6,3 +6,9 @@ cmake ../ -DENABLE_INTERNAL_VOLK=OFF
 make
 sudo make install
 sudo ldconfig
+
+export PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3/site-packages:$PYTHONPATH
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+#This is after adding the gnuradio3.8 ppa to apt
+sudo apt-get install gnuradio
