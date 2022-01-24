@@ -1,0 +1,7 @@
+when building from gnuradio-3.8.1.0-rc1
+
+mkdir build && cd build
+cmake ../ -DENABLE_INTERNAL_VOLK=OFF
+make
+sudo make install
+sudo ldconfig
