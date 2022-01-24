@@ -12,3 +12,16 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 #This is after adding the gnuradio3.8 ppa to apt
 sudo apt-get install gnuradio
+
+then install airspy
+
+then for osmosdr
+
+git clone -b gr3.8 https://github.com/osmocom/gr-osmosdr.git
+			cd gr-osmosdr/
+			mkdir build
+			cd build
+			cmake ..
+			make
+			sudo make install
+			sudo ldconfig	
