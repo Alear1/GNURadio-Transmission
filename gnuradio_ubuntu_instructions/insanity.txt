@@ -25,3 +25,5 @@ git clone -b gr3.8 https://github.com/osmocom/gr-osmosdr.git
 			make
 			sudo make install
 			sudo ldconfig	
+
+sudo apt-get install gr-osmosdr
