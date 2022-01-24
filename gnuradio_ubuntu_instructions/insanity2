@@ -5,3 +5,6 @@ sudo apt-get install libsndfile1-dev
 
 airspy
 
+pip3 install cPython
+
+https://raw.githubusercontent.com/python/cpython/main/Include/osmodule.h into /usr/include/python3.8
