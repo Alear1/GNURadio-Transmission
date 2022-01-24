@@ -34,8 +34,13 @@ PyAPI_FUNC(PyObject *) PyOS_FSPath(PyObject *path);
 
 
 ImportError: libvolk.so.2.0: cannot open shared object file: No such file or directory
+From this website: https://github.com/gnuradio/volk/releases
+download: https://github.com/gnuradio/volk/releases/download/v2.0.0/volk-v2.0.0.tar.gz
 
-git clone --recursive https://github.com/gnuradio/volk.git
+sudo apt-get install python-mako python-six
+
+extract volk
+
 cd volk
 mkdir build && cd build
 
