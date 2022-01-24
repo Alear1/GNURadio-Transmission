@@ -1,0 +1,7 @@
+Gnuradio 3.9
+osmosdr main
+
+sudo apt-get install libsndfile1-dev
+
+airspy
+
