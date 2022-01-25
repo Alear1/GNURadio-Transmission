@@ -1,0 +1,43 @@
+From https://github.com/gnuradio/gnuradio/releases:
+
+Download https://github.com/gnuradio/gnuradio/releases/download/v3.8.1.0/gnuradio-3.8.1.0.tar.gz
+
+extract gnuradio-3.8.1.0.tar.gz
+
+:~$ cd gnuradio-3.8.1.0.tar.gz
+:~$ mkdir build && cd build
+:~$ cmake ..
+:~$ make
+:~$ sudo make install
+:~$ sudo ldconfig
+
+if cannot find gnuradio follow 
+
+:~$ sudo nano ~/.bash_aliases
+
+#In nano editor, enter these two lines:
+export PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3/site-packages:$PYTHONPATH
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+#Now back outside 
+
+from https://github.com/airspy/airspyone_host
+
+:~$ sudo apt-get install build-essential cmake libusb-1.0-0-dev pkg-config
+
+follow airspy instructions
+
+follow other instructions to build osmosdr
+
+then alter udev rules
+
+add the gnuradio 3.8 ppa to apt-get then:
+
+:~$ sudo apt-get install gqrx-sdr
+
+then run gqrx as sudo
+if pulseaudio error:
+
+:~$ sudo pulseaudio -D 
+
+
