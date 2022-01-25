@@ -49,3 +49,6 @@ if pulseaudio error:
 :~$ sudo pulseaudio -D 
 
 
+
+list of satellites:
+https://www.amsat.org/two-way-satellites/
