@@ -29,7 +29,15 @@ follow airspy instructions
 
 follow other instructions to build osmosdr
 
-then alter udev rules
+then alter udev rules:
+:~$ cd
+:~$ cd /etc/udev/rules
+:~$ sudo nano 99-airspy.rules
+#Add this in nano:
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="60a1", MODE:="0666"
+#This is the last line of the nano file
+
+:~$ sudo udevadm control --reload-rules
 
 add the gnuradio 3.8 ppa to apt-get then:
 
