@@ -283,7 +283,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [472, 404.0]
+    coordinate: [472, 388.0]
     rotation: 0
     state: true
 - name: blocks_wavfile_source_0
@@ -607,7 +607,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [880, 332.0]
+    coordinate: [904, 316.0]
     rotation: 0
     state: true
 - name: qtgui_sink_x_0
@@ -636,7 +636,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [680, 452.0]
+    coordinate: [680, 436.0]
     rotation: 0
     state: true
 - name: rational_resampler_xxx_0
@@ -676,7 +676,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [264, 380.0]
+    coordinate: [264, 364.0]
     rotation: 0
     state: true
 - name: virtual_sink_0
@@ -702,7 +702,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [80, 404.0]
+    coordinate: [72, 388.0]
     rotation: 0
     state: true
 
