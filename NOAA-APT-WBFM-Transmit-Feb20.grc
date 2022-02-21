@@ -41,7 +41,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [280, 12.0]
+    coordinate: [272, 12.0]
     rotation: 0
     state: true
 - name: center_freq
@@ -137,7 +137,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [368, 12.0]
+    coordinate: [360, 12.0]
     rotation: 0
     state: true
 - name: radio_audio_rate
@@ -161,7 +161,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [304, 76.0]
+    coordinate: [312, 76.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -173,7 +173,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [176, 12.0]
+    coordinate: [184, 12]
     rotation: 0
     state: enabled
 - name: transmit_volume
@@ -260,15 +260,15 @@ blocks:
     coordinate: [1168, 4.0]
     rotation: 0
     state: true
-- name: analog_nbfm_tx_0
-  id: analog_nbfm_tx
+- name: analog_wfm_tx_0
+  id: analog_wfm_tx
   parameters:
     affinity: ''
     alias: ''
     audio_rate: radio_audio_rate
     comment: ''
     fh: '-1.0'
-    max_dev: 5e3
+    max_dev: 75e3
     maxoutbuf: '0'
     minoutbuf: '0'
     quad_rate: quadrature_rate
@@ -719,13 +719,13 @@ blocks:
     state: true
 
 connections:
-- [analog_nbfm_tx_0, '0', low_pass_filter_0, '0']
+- [analog_wfm_tx_0, '0', low_pass_filter_0, '0']
 - [blocks_multiply_const_vxx_0, '0', osmosdr_sink_0, '0']
 - [blocks_multiply_const_vxx_0, '0', qtgui_sink_x_0, '0']
 - [blocks_wavfile_source_0, '0', rational_resampler_xxx_0, '0']
 - [channels_channel_model_0, '0', virtual_sink_0, '0']
 - [low_pass_filter_0, '0', channels_channel_model_0, '0']
-- [rational_resampler_xxx_0, '0', analog_nbfm_tx_0, '0']
+- [rational_resampler_xxx_0, '0', analog_wfm_tx_0, '0']
 - [rational_resampler_xxx_1, '0', blocks_multiply_const_vxx_0, '0']
 - [virtual_source_0, '0', rational_resampler_xxx_1, '0']
 
