@@ -41,7 +41,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [280, 12.0]
+    coordinate: [256, 12.0]
     rotation: 0
     state: true
 - name: center_freq
@@ -53,16 +53,16 @@ blocks:
     min_len: '100'
     orient: Qt.Horizontal
     rangeType: float
-    start: '435000000'
+    start: '137500000'
     step: '100000'
-    stop: '437000000'
-    value: '436500000'
+    stop: '141000000'
+    value: '140000000'
     widget: counter
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1040, 4.0]
+    coordinate: [992, 4.0]
     rotation: 0
     state: true
 - name: filter_cutoff
@@ -83,7 +83,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [648, 4.0]
+    coordinate: [600, 4.0]
     rotation: 0
     state: true
 - name: filter_transition
@@ -104,7 +104,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [504, 4.0]
+    coordinate: [456, 4.0]
     rotation: 0
     state: true
 - name: noise_voltage
@@ -125,7 +125,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [784, 4.0]
+    coordinate: [736, 4.0]
     rotation: 0
     state: true
 - name: quadrature_rate
@@ -137,7 +137,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [368, 12.0]
+    coordinate: [336, 12.0]
     rotation: 0
     state: true
 - name: radio_audio_rate
@@ -161,7 +161,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [304, 76.0]
+    coordinate: [296, 76.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -176,6 +176,27 @@ blocks:
     coordinate: [176, 12.0]
     rotation: 0
     state: enabled
+- name: transmit_deviation
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Transmission Max Deviation
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '2500'
+    step: '500'
+    stop: '24000'
+    value: '18000'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1408, 124.0]
+    rotation: 0
+    state: true
 - name: transmit_volume
   id: variable_qtgui_range
   parameters:
@@ -194,7 +215,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [904, 4.0]
+    coordinate: [856, 4.0]
     rotation: 0
     state: true
 - name: transmitter_bb
@@ -215,7 +236,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1456, 4.0]
+    coordinate: [1408, 4.0]
     rotation: 0
     state: true
 - name: transmitter_if
@@ -236,7 +257,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1312, 4.0]
+    coordinate: [1264, 4.0]
     rotation: 0
     state: true
 - name: transmitter_rf
@@ -257,7 +278,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1168, 4.0]
+    coordinate: [1120, 4.0]
     rotation: 0
     state: true
 - name: analog_nbfm_tx_0
@@ -268,7 +289,7 @@ blocks:
     audio_rate: radio_audio_rate
     comment: ''
     fh: '-1.0'
-    max_dev: 5e3
+    max_dev: transmit_deviation
     maxoutbuf: '0'
     minoutbuf: '0'
     quad_rate: quadrature_rate
@@ -336,7 +357,7 @@ blocks:
     bus_structure: null
     coordinate: [1016, 164.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: low_pass_filter_0
   id: low_pass_filter
   parameters:
