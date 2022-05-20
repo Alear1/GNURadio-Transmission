@@ -1,0 +1,8 @@
+Instructions for installing goestools on Ubuntu 20.04 (and maybe later raspbian lite)
+
+UBUNTU 20.04
+
+Download GOESTools into a goes directory:
+
+:~$ git clone https://github.com/pietern/goestools
+
