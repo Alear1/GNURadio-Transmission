@@ -102,5 +102,6 @@ Use the following command to run goesrecv:
 :~$ goesrecv -v -c <ABSOLUTE PATH TO FILE>
 
 We can alter the config file to specify what we want, for now we use the modified example config file above.
+Use the vit(avg) column (viterbi error) to determine quality of signal. No signal is about 2000, good signal is between 100 and 200.
 
 
