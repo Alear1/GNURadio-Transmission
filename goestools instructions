@@ -6,3 +6,17 @@ Download GOESTools into a goes directory:
 
 :~$ git clone https://github.com/pietern/goestools
 
+RASPBIAN:
+
+Instructions from: https://pietern.github.io/goestools/installation.html#installation
+
+:~$ cd
+:~$ mkdir GOES && cd GOES
+:~$ sudo apt-get install -y build-essential cmake git-core libopencv-dev libproj-dev zlib1g-dev
+:~$ sudo apt install libairspy-dev librtlsdr-dev
+:~$ cd goestools
+:~$ mkdir build
+:~$ cd build
+:~$ cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
+:~$ make
+:~$ make install
