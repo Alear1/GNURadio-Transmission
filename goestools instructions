@@ -13,4 +13,13 @@ Instructions from: https://pietern.github.io/goestools/installation.html#install
 :~$ make
 :~$ make install
 
-OPERATIONAL INSTRUCTIONS:
+CONFIGURATION:
+
+goestools is made up of goesrecv for receiving, goeslrit for initial processing and saving, and goesproc for processing.
+
+goesrecv has a bunch of configuration options, controlled by the config file. We must run goes with a specified config file.
+Use the following command to run goesrecv:
+
+:~$ goesrecv -c <ABSOLUTE PATH TO FILE>
+
+We can alter the config file to specify what we want, for now we use the example config file.
