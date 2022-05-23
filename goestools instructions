@@ -2,6 +2,8 @@ Instructions for installing goestools on Ubuntu 20.04 and Raspbian (Same for bot
 
 Instructions from: https://pietern.github.io/goestools/installation.html#installation
 
+Absolutely all of this information is the work of the people at goestools, this is just a streamlined instruction set.
+
 First, create a GOES folder somewhere. Then:
 
 :~$ mkdir GOES && cd GOES
@@ -78,7 +80,8 @@ bind = "tcp://0.0.0.0:5001"
 send_buffer = 1048576
 
 [decoder.packet_publisher]
-bind = "tcp://0.0.0.0:5004"
+#bind = "tcp://0.0.0.0:5004"
+bind = "ipc://sock.ipc"
 send_buffer = 1048576
 
 # The demodulator stats publisher sends a JSON object that describes
@@ -104,8 +107,72 @@ Use the following command to run goesrecv:
 We can alter the config file to specify what we want, for now we use the modified example config file above.
 Use the vit(avg) column (viterbi error) to determine quality of signal. No signal is about 2000, good signal is between 100 and 200 (ideal 0).
 
+TO SAVE DATA goeslrit OR goesproc MUST BE RUNNING CONCURRENTLY WITH goesrecv
+
 We can either save the data as .lrit files or we can send the info directly to goesproc to make images.
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
-USING goeslrit
 
+USING goeslrit:
+
+:~$ goeslrit --help
+
+The above line displays all the options for using goeslrit, which does not require a configuration file. We need to subscribe to the goesrecv pipe,
+decide what information we want, and specify the file path to save the .lrit files to for example:
+
+:~$ goeslrit --subscribe "ipc://sock.ipc" --images --out DIR /home/GOES/archive
+
+This will subscribe to the goesrecv output using the ipc protocol, with the socket location being sock.ipc. It will only output the image .lrit files,
+and those image .lrit files will be saved into the /home/GOES/archive directory.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+USING goesproc BYPASSING goeslrit:
+
+We can connect to goesrecv directly over ipc and bypass saving lrit files:
+
+:~$ goesproc --subscribe "ipc://sock.ipc" --out DIR <absolute path to folder> -c <absolute path to config>
+
+Where --subscribe works the same as with goeslrit, subscribing to the output of goesrecv on the socket sock.ipc, and --out DIR still being the
+absolute path to the output file directory. NOTE: the output directory MUST EXIST, the software will not create a new directory for you
+
+-c is the same as in goesrecv, where the argument is the absolute path to the config file. To create the config file, use the same steps as for
+goesrecv:
+
+-cd into the GOES folder
+:~$ nano goesproc.conf
+-Copy-paste the following lines into the nano editor (Without the rows of === signs, those are just to show where the file starts and stops):
+
+===================================================================================================
+# Example configuration file for goesproc
+#
+# This tool is designed to run on streaming data (live or recorded)
+# and product whatever is listed in this file. A single product can be
+# processed multiple times (e.g. with different contrast curves,
+# different scale, or different annotations) by listing multiple
+# handlers for that same product.
+#
+
+# GOES-16 mesoscale region 1 imagery is stored at ./goes16/m1/YYYY-MM-DD
+# The pattern specified in {time:XXX} is extrapolated using strftime(3).
+# It can be used more than once if needed.
+[[handler]]
+type = "image"
+origin = "goes16"
+region = "m1"
+dir = "./goes16/m1/{time:%Y-%m-%d}"
+====================================================================================================
+
+The above goesproc config file should receive image files and output all m1 region data into the directory specified in the command line,
+with the sub-directory ./goes/m1/{time:%Y-%m-%d}.
+
+Then we can use imagemagick or whatever to deal with the images.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+USING goesproc WITH goeslrit:
+
+very similar to the section above, but specifying the .lrit file locations rather than subscribing to goesrecv directly.
+
+:~$ goesproc -c <absolute path to config> -m lrit <absolute(?) path to lrit files>
 
