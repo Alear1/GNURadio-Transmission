@@ -121,10 +121,10 @@ USING goeslrit:
 The above line displays all the options for using goeslrit, which does not require a configuration file. We need to subscribe to the goesrecv pipe,
 decide what information we want, and specify the file path to save the .lrit files to for example:
 
-:~$ goeslrit --subscribe "ipc://sock.ipc" --images --out DIR /home/GOES/archive
+:~$ goeslrit --subscribe "ipc://sock.ipc" --images --out DIR <ABSOLUTE PATH TO FILE ARCHIVE>
 
 This will subscribe to the goesrecv output using the ipc protocol, with the socket location being sock.ipc. It will only output the image .lrit files,
-and those image .lrit files will be saved into the /home/GOES/archive directory.
+and those image .lrit files will be saved into the directory specified.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
