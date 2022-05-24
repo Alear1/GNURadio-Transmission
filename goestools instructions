@@ -54,7 +54,7 @@ source = "airspy"
 ## so that it works for either model.
 ##
  sample_rate = 3000000
- gain = 18
+ gain = 25
  bias_tee = true
 
 # [rtlsdr]
@@ -81,8 +81,7 @@ bind = "tcp://0.0.0.0:5001"
 send_buffer = 1048576
 
 [decoder.packet_publisher]
-#bind = "tcp://0.0.0.0:5004"
-bind = "ipc://sock.ipc"
+bind = "tcp://127.0.0.1:5004"
 send_buffer = 1048576
 
 # The demodulator stats publisher sends a JSON object that describes
@@ -121,7 +120,7 @@ USING goeslrit:
 The above line displays all the options for using goeslrit, which does not require a configuration file. We need to subscribe to the goesrecv pipe,
 decide what information we want, and specify the file path to save the .lrit files to for example:
 
-:~$ goeslrit --subscribe "ipc://sock.ipc" --images --out DIR <ABSOLUTE PATH TO FILE ARCHIVE>
+:~$ goeslrit --subscribe "tcp://127.0.0.1:5005" --images --out DIR <ABSOLUTE PATH TO FILE ARCHIVE>
 
 This will subscribe to the goesrecv output using the ipc protocol, with the socket location being sock.ipc. It will only output the image .lrit files,
 and those image .lrit files will be saved into the directory specified. NOTE: the output directory MUST EXIST, 
@@ -133,7 +132,7 @@ USING goesproc BYPASSING goeslrit:
 
 We can connect to goesrecv directly over ipc and bypass saving lrit files:
 
-:~$ goesproc --subscribe "ipc://sock.ipc" --out DIR <absolute path to folder> -c <absolute path to config>
+:~$ goesproc --subscribe "tcp://127.0.0.1:5005" --out DIR <absolute path to folder> -c <absolute path to config>
 
 Where --subscribe works the same as with goeslrit, subscribing to the output of goesrecv on the socket sock.ipc, and --out DIR still being the
 absolute path to the output file directory. NOTE: the output directory MUST EXIST, the software will not create a new directory for you
