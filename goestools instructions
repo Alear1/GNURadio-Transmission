@@ -9,6 +9,7 @@ First, create a GOES folder somewhere. Then:
 :~$ mkdir GOES && cd GOES
 :~$ sudo apt-get install -y build-essential cmake git-core libopencv-dev libproj-dev zlib1g-dev
 :~$ sudo apt install libairspy-dev librtlsdr-dev
+:~$ git clone --recursive https://github.com/pietern/goestools
 :~$ cd goestools
 :~$ mkdir build
 :~$ cd build
