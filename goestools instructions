@@ -176,4 +176,3 @@ USING goesproc WITH goeslrit:
 very similar to the section above, but specifying the .lrit file locations rather than subscribing to goesrecv directly.
 
 :~$ goesproc -c <absolute path to config> -m lrit <absolute(?) path to lrit files>
-
