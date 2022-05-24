@@ -124,7 +124,8 @@ decide what information we want, and specify the file path to save the .lrit fil
 :~$ goeslrit --subscribe "ipc://sock.ipc" --images --out DIR <ABSOLUTE PATH TO FILE ARCHIVE>
 
 This will subscribe to the goesrecv output using the ipc protocol, with the socket location being sock.ipc. It will only output the image .lrit files,
-and those image .lrit files will be saved into the directory specified.
+and those image .lrit files will be saved into the directory specified. NOTE: the output directory MUST EXIST, 
+the software will not create a new directory for you
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
