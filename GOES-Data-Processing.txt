@@ -18,3 +18,10 @@ These seem to be all-purpose (maybe that's why it's an A) files, commonly weathe
 from various areas of the US, as well as storm warnings/reports, test information from airports,
 information from local weather radars, etc...
 
+EMWIN:
+
+in the conf file:
+
+[[handler]]
+type = "emwin"
+dir = <path_to_dir>
