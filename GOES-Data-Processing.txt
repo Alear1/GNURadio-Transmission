@@ -1,0 +1,6 @@
+To be used in conjunction with goesrecv, goeslrit and goesproc.
+
+goestools github link: https://github.com/pietern/goestools
+goestools doc link: https://pietern.github.io/goestools/
+
+GOES16 imager data information: https://docs.opendata.aws/noaa-goes16/cics-readme.html
