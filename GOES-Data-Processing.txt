@@ -33,3 +33,4 @@ DOCUMENTATION:
 downlink description(s): https://www.goes-r.gov/users/abiScanModeInfo.html
 ABI Band Info: https://www.goes-r.gov/mission/ABI-bands-quick-info.html
 GOES16 Full Disk mode schedule: https://www.ospo.noaa.gov/Operations/GOES/east/g16routine.html
+GOES Docs: https://www.goes-r.gov/resources/docs.html
