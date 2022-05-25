@@ -25,3 +25,9 @@ in the conf file:
 [[handler]]
 type = "emwin"
 dir = <path_to_dir>
+
+
+
+DOCUMENTATION:
+
+downlink description(s): https://www.goes-r.gov/users/abiScanModeInfo.html
