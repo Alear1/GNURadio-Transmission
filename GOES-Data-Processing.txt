@@ -4,3 +4,17 @@ goestools github link: https://github.com/pietern/goestools
 goestools doc link: https://pietern.github.io/goestools/
 
 GOES16 imager data information: https://docs.opendata.aws/noaa-goes16/cics-readme.html
+
+Currently, 6 types of .lrit files have been received:
+
+YYYYMMDDTTTTT-atl$$$$$_!!!!!!!!!!.lrit
+YYYYMMDDTTTTT-CAR_latest.lrit
+A_$$$$####$$_YYYYMMDDTTTT_$$$$$$.lrit
+OR_ABI-L2-<Instrument Identifier>-<Channel>_<Satellite>_sYYYYMMDDTTTTTT_eYYYYMMDDTTTTTT_cYYYYMMDDTTTTTT.lrit
+
+
+A_:
+These seem to be all-purpose (maybe that's why it's an A) files, commonly weather round-ups 
+from various areas of the US, as well as storm warnings/reports, test information from airports,
+information from local weather radars, etc...
+
