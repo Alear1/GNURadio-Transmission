@@ -35,6 +35,9 @@ OR_:
 The meat and potatoes of the data, these are the operational realtime data files. By default goesproc processes
 data from the CMIP product, but it can be configured to output data from the other products too (SST in progress).
 
+Use the following link to understand the file naming convention of the OR_ files:
+https://www.goes-r.gov/mission/ABI-bands-quick-info.html
+
 DOCUMENTATION:
 
 downlink description(s): https://www.goes-r.gov/users/abiScanModeInfo.html
