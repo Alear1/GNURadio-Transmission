@@ -1,5 +1,55 @@
-goesproc -c /home/august/Projects/GS-Project/GOES/goesproc-config.txt -m lrit /home/august/Projects/"Sat Recordings"/GOES16/GoesData-20220524/DIR
+IMPORTANT: Currently, to save any data goesrecv must be running concurrently with either goeslrit or goesproc.
+running goesrecv by itself will NOT SAVE DATA.
+
+To find more info on the commands used for goestools, you can enter the following line:
+
+:~$ <goestool> --help
+
+for example:
+
+:~$ goesrecv --help 
 
 
-Data info:
-https://docs.opendata.aws/noaa-goes16/cics-readme.html
+GOESRECV:
+goesrecv will output the data from the decoder to the tcp socket specified in the config file. To run goesrecv:
+
+:~$ goesrecv -v -c <absolute path to config file>
+
+Example:
+
+:~$ goesrecv -v -c /home/august/Projects/GS-Project/GOES/goesrecv.conf
+
+=============================================================================================================
+GOESLRIT:
+
+To output .lrit files of all incoming data from goesrecv (does not filter out any data):
+
+:~$ goeslrit --all --subscribe tcp://127.0.0.1:5005 -out DIR <absolute path to lrit file archive>
+
+Example:
+
+:~$ goeslrit --all --subscribe tcp://127.0.0.1:5005 -out DIR /home/august/Projects/GS-Project/GOES
+
+To output only .lrit files of the incoming data that is classified as images:
+
+:~$ goeslrit --images --subscribe tcp://127.0.0.1:5005 -out DIR <absolute path to lrit file archive>
+
+
+==============================================================================================================
+GOESPROC:
+
+To connect goesproc directly to goesrecv (no goeslrit) with config file in /home/august/Projects/GS-Project/GOES/goesproc-stored.conf:
+
+:~$ goesproc --subscribe tcp://127.0.0.1:5005 -c <path to config file>
+
+Example:
+:~$ goesproc --subscribe tcp://127.0.0.1:5005 -c /home/august/Projects/GS-Project/GOES/goesproc-live.conf
+
+To use goesproc on existing .lrit files:
+
+:~$ goesproc -c <absolute path to config file> -m lrit <absolute path to directory where .lrit files are stored>
+
+Example:
+:~$ goesproc -c /home/august/Projects/GS-Project/GOES/goesproc-goesproc-stored.conf -m lrit /home/august/Projects/"Sat Recordings"/GOES16/GoesData-20220524/DIR
+
+
