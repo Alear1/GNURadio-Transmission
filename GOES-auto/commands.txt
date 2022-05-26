@@ -1,0 +1,5 @@
+goesproc -c /home/august/Projects/GS-Project/GOES/goesproc-config.txt -m lrit /home/august/Projects/"Sat Recordings"/GOES16/GoesData-20220524/DIR
+
+
+Data info:
+https://docs.opendata.aws/noaa-goes16/cics-readme.html
