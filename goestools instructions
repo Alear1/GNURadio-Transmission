@@ -132,7 +132,7 @@ USING goesproc BYPASSING goeslrit:
 
 We can connect to goesrecv directly over ipc and bypass saving lrit files:
 
-:~$ goesproc --subscribe "tcp://127.0.0.1:5005" --out DIR <absolute path to folder> -c <absolute path to config>
+:~$ goesproc --subscribe "tcp://127.0.0.1:5005" -c <absolute path to config>
 
 Where --subscribe works the same as with goeslrit, subscribing to the output of goesrecv on the socket sock.ipc, and --out DIR still being the
 absolute path to the output file directory. NOTE: the output directory MUST EXIST, the software will not create a new directory for you
@@ -175,4 +175,6 @@ USING goesproc WITH goeslrit:
 
 very similar to the section above, but specifying the .lrit file locations rather than subscribing to goesrecv directly.
 
-:~$ goesproc -c <absolute path to config> -m lrit <absolute(?) path to lrit files>
+:~$ goesproc -c <absolute path to config> -m lrit <absolute path to lrit file directory>
+
+the -f tag will forcibly overwrite the existing data in the archive directory
