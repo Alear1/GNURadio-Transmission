@@ -1,5 +1,8 @@
 To be used in conjunction with goesrecv, goeslrit and goesproc.
 
+HRIT supported data: https://www.noaasis.noaa.gov/GOES/HRIT/sample_imagery.html
+
+
 goestools github link: https://github.com/pietern/goestools
 goestools doc link: https://pietern.github.io/goestools/
 
@@ -11,8 +14,6 @@ YYYYMMDDTTTTT-atl$$$$$_!!!!!!!!!!.lrit
 YYYYMMDDTTTTT-CAR_latest.lrit
 A_$$$$####$$_YYYYMMDDTTTT_$$$$$$.lrit
 OR_ABI-L2-<Instrument Identifier>-<Channel>_<Satellite>_sYYYYMMDDTTTTTT_eYYYYMMDDTTTTTT_cYYYYMMDDTTTTTT.lrit
-
-
 
 
 EMWIN:
